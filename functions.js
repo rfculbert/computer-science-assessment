@@ -48,7 +48,46 @@ function hasUniqueChars (input) {
 // this function should also be O(n^2)
 
 // Pangram sentence
+//indexOf(str[i])
 
-function isPangram (str) {
+function isPangram (letters) {
+    const alpha = mondifyString('abcdefghijklmnopqrstuvwxyz')
+    const str = mondifyString(letters)
+    for (let i = 0; i < str.length; i++){
+        // console.log(str[i])
+        const spliceIndex = alpha.indexOf(str[i])
+        // console.log(spliceIndex)
+        if (spliceIndex > -1) {
+            alpha.splice(spliceIndex, 1)
+            // console.log(alpha)
+        }
 
+    } if (alpha.length === 0) {
+        return console.log("true")
+    } else {
+        return console.log("false")
+    }
 }
+
+isPangram("The quick brown fox jumps over the lazy dog")
+isPangram("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+// this function would be an O(n)
+
+//Longest word
+
+function findLongestWord (arr) {
+    // console.log(str)
+    let maxLength = 0
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].length >= maxLength) {
+            maxLength = arr[i].length
+        } 
+    } return console.log(maxLength)
+}
+    
+
+
+
+findLongestWord(["hello", "hi"])
+findLongestWord(["trina", "garrett", "robert"])
+// This is an O(n)
